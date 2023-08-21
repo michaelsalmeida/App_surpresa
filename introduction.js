@@ -4,7 +4,7 @@ import { View, Text, Image, StyleSheet, ImageBackground } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 // import PropTypes from 'deprecated-react-native-prop-types';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 
 
@@ -60,8 +60,6 @@ function Intro () {
       
     );
   }
-
-
     return(
       <View style={{flex: 1}}>
      
@@ -93,13 +91,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent:'space-evenly',
     alignItems: 'center',
-    ...PropTypes.style
-
+    // ...PropTypes.style
   },
+
   image: {
     width: 200,
     height: 200,
-    ...PropTypes.style
+    // ...PropTypes.style
   },
 
   botaoProximo: {
@@ -112,7 +110,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3,
     shadowRadius: 4,
     elevation: 3,
-    ...PropTypes.style
+    // ...PropTypes.style
   },
 
   botaoEntrar: {
@@ -125,6 +123,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3,
     shadowRadius: 4,
     elevation: 3,
-    ...PropTypes.style
+    // ...PropTypes.style
   }
 })
