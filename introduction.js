@@ -10,7 +10,8 @@ import { StatusBar } from 'expo-status-bar';
 
 function Intro () {
 
-    const navigation = useNavigation();
+
+  const navigation = useNavigation();
 
   function goToHome () {
       navigation.navigate('Home');
@@ -61,6 +62,8 @@ function Intro () {
     );
   }
     return(
+      
+      
       <View style={{flex: 1}}>
      
       <AppIntroSlider

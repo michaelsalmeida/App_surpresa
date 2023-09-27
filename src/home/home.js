@@ -2,6 +2,7 @@ import Carousel from 'react-native-snap-carousel';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
+import AudioPlayer from './youtube';
 // import PropTypes from 'prop-types';
 
 
@@ -60,6 +61,8 @@ function Carrousel() {
       <TouchableOpacity onPress={() => navigation.navigate('Intro')}>
         <Text>VOLTAAAARRR </Text>
       </TouchableOpacity>
+
+      <AudioPlayer></AudioPlayer>
     </View>
   );
 }
