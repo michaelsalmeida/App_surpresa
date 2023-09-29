@@ -55,7 +55,24 @@ export default function AudioPlayer() {
     if (soundObject) {
         await soundObject.pauseAsync();
 
-        await soundObject.playAsync();
+        
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  const mudarMusicaParaTras = async () => {
+    const tamanhoListaMusica = musicas.length;
+
+    if (musicaAtual != 0) {
+      setMusicaAtual(musicaAtual - 1); // Passa para a próxima música
+
+    } else {
+      setMusicaAtual(tamanhoListaMusica - 1);
+    }
+
+    setMusica(musicas[musicaAtual]);
+    if (soundObject) {
+        await soundObject.pauseAsync();
 
         
       setIsPlaying(!isPlaying);
@@ -64,7 +81,7 @@ export default function AudioPlayer() {
 
   return (
     <View style={estilos.container}>
-      <TouchableOpacity onPress={playAudio} style={estilos.botaoTrocarMusica}>
+      <TouchableOpacity onPress={mudarMusicaParaTras} style={estilos.botaoTrocarMusica}>
         <Icon name="backward" size={20} color="white" />
       </TouchableOpacity>
 
