@@ -52,17 +52,18 @@ function Carrousel() {
       <StatusBar hidden={true}/>
         
       <Carousel
-        layout={'default'}
+        layout={'stack'}
         data={carouselItems}
         renderItem={renderItem}
-        sliderWidth={300}
-        itemWidth={280}
+        sliderWidth={400}
+        itemWidth={400}
       />
-      <TouchableOpacity onPress={() => navigation.navigate('Intro')}>
-        <Text>VOLTAAAARRR </Text>
+      <TouchableOpacity onPress={() => navigation.navigate('Intro')} style={styles.voltar}>
+        {/* <Text style={styles.textVoltar}>VOLTAR </Text> */}
+        <Image style={styles.imgVoltar} source={require('../../assets/seta-para-baixo.png')}/>
       </TouchableOpacity>
 
-      <AudioPlayer></AudioPlayer>
+      <AudioPlayer />
     </View>
   );
 }
@@ -72,6 +73,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: 'yellow'
     // ...PropTypes.style
   },
   itemContainer: {
@@ -82,9 +84,10 @@ const styles = StyleSheet.create({
     // ...PropTypes.style
   },
   image: {
-    width: 300,
-    height: 300,
-    borderRadius: 10
+    width: 400,
+    height: 400,
+    borderRadius: 10,
+    objectFit: 'cover'
     // ...PropTypes.style
     
   },
@@ -93,7 +96,31 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginTop: 10,
     marginLeft: 60,
+    position: 'absolute',
+    bottom: 30,
+    textAlign: 'center',
+    color: 'white',
     // ...PropTypes.style
+  },
+
+  voltar:{
+    position: 'absolute',
+    top: 20,
+    right: 20,
+    backgroundColor: 'yellow',
+    paddingHorizontal: 17,
+    borderRadius: 100,
+    borderColor: 'red',
+    // borderWidth: 2
+  },
+  textVoltar:{
+    color: 'red',
+    fontWeight: 'bold'
+  },
+  imgVoltar:{
+    transform: [{rotate: '90deg'}],
+    width: 30,
+    objectFit: 'contain'
   },
 });
 

@@ -104,14 +104,14 @@ const estilos = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: 'yellow',
     width : '100%',
-    gap : 30,
-    alignItems : 'center'
+    gap : 20,
+    alignItems : 'center',
 
   },
   botaoTocar : {
     backgroundColor : 'red',
-    width : 160,
-    height : 160,
+    width : '40%',
+    height : '40%',
     borderRadius : 100,
     justifyContent: 'center',
     alignItems : 'center',
@@ -122,8 +122,8 @@ const estilos = StyleSheet.create({
   },
   botaoTrocarMusica : {
     backgroundColor : 'red',
-    width : 70,
-    height : 70,
+    width : '15%',
+    height : '15%',
     borderRadius : 100,
     justifyContent: 'center',
     alignItems : 'center'
