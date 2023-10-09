@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { View, Button, StyleSheet, Text, TouchableOpacity, Alert } from 'react-native';
+import { View, Button, StyleSheet, Text, TouchableOpacity, Alert, ImageBackground} from 'react-native';
 import { Audio } from 'expo-av';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default function AudioPlayer() {
+
   const [musicaAtual, setMusicaAtual] = useState(0);
   const musicas = [
-    require('../../assets/YourMan.mp3'),
+    require('../../assets/musiquinha.mp3'),
     require('../../assets/aaaa.mp3'),
     require('../../assets/bbbb.mp3')
   ];
+
   const [musica, setMusica] = useState(musicas[musicaAtual]);
   const [soundObject, setSoundObject] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -80,32 +82,55 @@ export default function AudioPlayer() {
   };
 
   return (
-    <View style={estilos.container}>
-      <TouchableOpacity onPress={mudarMusicaParaTras} style={estilos.botaoTrocarMusica}>
-        <Icon name="backward" size={20} color="white" />
-      </TouchableOpacity>
 
-      <TouchableOpacity onPress={playAudio} style={estilos.botaoTocar}>
-        <Icon name={isPlaying ? 'pause' : 'play'} size={40} color="white" />
-      </TouchableOpacity>
+    <ImageBackground
+      source={require('../../assets/coracao2.png')}
+      style={estilos.backgroundImage}
+    >
+      <View style={estilos.container}>
+        
+        <TouchableOpacity style={estilos.botaoTrocarMusica}>
+        <Text style={estilos.aperteaquii}>
+            CIFRA
+          </Text>
+          <Icon name="heart" size={20} color="white" />
+        </TouchableOpacity>
 
-      <TouchableOpacity onPress={mudarMusicaParaFrente} style={estilos.botaoTrocarMusica}>
-        <Icon name="forward" size={20} color="white" />
-      </TouchableOpacity>
-    </View>
+        <TouchableOpacity onPress={playAudio} style={estilos.botaoTocar}>
+          <Icon name={isPlaying ? 'pause' : 'play'} size={40} color="white" />
+          <Text style={estilos.aperteaqui}>
+            DE
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={estilos.botaoTrocarMusica}>
+        <Text style={estilos.aperteaquii}>
+            CESAR
+          </Text>
+          <Icon name="heart" size={20} color="white" />
+        </TouchableOpacity>
+      </View>
+    </ImageBackground>
   );
 }
 
 
 const estilos = StyleSheet.create({
+  backgroundImage: {
+    flex: 1,
+    resizeMode: 'cover', // ou 'contain' para controlar o comportamento de dimensionamento da imagem de fundo
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%'
+  },
   container : {
     flex : 1,
     flexDirection : 'row',
     justifyContent: 'center',
-    backgroundColor: 'yellow',
     width : '100%',
     gap : 20,
     alignItems : 'center',
+    
 
   },
   botaoTocar : {
@@ -132,5 +157,15 @@ const estilos = StyleSheet.create({
     color : '#fff',
     fontWeight : 'bold',
     fontSize : 35
+  },
+  aperteaqui : {
+    fontWeight: 'bold',
+    fontSize: 25,
+    color: '#fff'
+  },
+  aperteaquii : {
+    fontWeight: 'bold',
+    fontSize: 15,
+    color: '#fff'
   }
 });
